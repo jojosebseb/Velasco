@@ -1,0 +1,113 @@
+// init start
+*{
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    color: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+//init end
+
+//pallette
+$main-color : #eee;
+$main-orange : rgba(244, 113, 35, 1);
+
+$container-width: 1000px;
+$navbar-height: 76px;
+.container{
+    width: $container-width;
+    position: relative;
+    margin: auto;
+}
+.blurred{
+    transform: scale(1.1);
+    filter: blur(5px);
+}
+//pallette
+
+#indexProduct{
+    font-family: arial;
+    text-align: center;
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 1172px;
+        margin-bottom: 40px;
+    }
+    .flex-module{
+        width: 375px;
+        height: 182px;
+        background: black;
+        margin-top: 30px;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+        a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+            display: block;
+        }
+    }
+    .module-caption{
+        color: white;
+        border: 1px solid transparent;
+        padding: 10px 25px 10px 25px;
+        text-align: center;
+        top: 70px;
+        position: relative;
+        display: inline-block;
+        opacity: 0.87;
+        font-size: 14px;
+        transition: all .3s ease;
+    }
+    .module-bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transition: all .3s ease;
+    }
+    .hover-tint{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: rgba(0,0,0, 0.5);
+        opacity: 1;
+        transition: all .3s ease;
+    }
+    .flex-module:hover{
+        .hover-tint{
+            cursor: pointer;
+            opacity: 0;
+        }
+        .module-bg{
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .module-caption{
+            border: 1px solid white;
+            padding: 10px 15px;
+        }
+    }
+    .yellow-btn{
+        padding: 10px 25px;
+        background: #f7941e;
+        color: white;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+}
